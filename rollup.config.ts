@@ -10,7 +10,7 @@ export default defineConfig({
     {
       dir: undefined,
       file: './lib/index.esm.js',
-      format: 'esm',
+      format: 'esm'
     },
     {
       dir: undefined,
@@ -27,15 +27,15 @@ export default defineConfig({
       dir: undefined,
       file: './lib/index.min.js',
       format: 'iife',
-      name: 'OhMyUtils',
-      plugins: [terser()]
-    },
+      name: 'OhMyUtils'
+    }
   ],
   plugins: [
+    terser(),
     typescript({
       tsconfig: './tsconfig.json'
     }),
     commonjs(),
-    nodeResolve(),
+    nodeResolve()
   ]
 })
