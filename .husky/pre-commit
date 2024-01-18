@@ -2,6 +2,6 @@
 . "$(dirname -- "$0")/_/husky.sh"
 
 # 全量规范代码 一段时间后注释
-npm run format && npm run lint
+# npm run format && npm run lint
 # 仅规范化 staged code
-# npx lint-staged
+npx lint-staged
