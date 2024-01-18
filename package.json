@@ -17,6 +17,9 @@
   },
   "author": "HduSy <bilisantu@gmail.com>",
   "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "dev": "pnpm clean && rollup -c -w --configPlugin @rollup/plugin-typescript",
     "build": "pnpm clean && rollup -c --configPlugin @rollup/plugin-typescript",
