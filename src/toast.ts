@@ -18,8 +18,9 @@ export default function toast(text: string, time = 1000): void {
     zIndex: '1000'
   }
   Object.keys(styles).forEach((key: string) => {
+    // toast.style.setProperty(key, styles[key])
     // @ts-expect-error
-    toast.style.setProperty(key, styles[key])
+    toast.style[key] = styles[key]
   })
   body.appendChild(toast)
   const timer = setTimeout(() => {
