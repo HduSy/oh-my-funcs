@@ -1,5 +1,5 @@
 {
-  "name": "@moss/oh-my-utils",
+  "name": "oh-my-funcs",
   "version": "1.0.1",
   "description": "前端开发常用功能函数，拿来即用",
   "type": "module",
@@ -13,7 +13,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/HduSy/oh-my-utils"
+    "url": "git+https://github.com/HduSy/oh-my-funcs"
   },
   "author": "HduSy <bilisantu@gmail.com>",
   "license": "MIT",
@@ -32,9 +32,9 @@
     "format": "prettier --config .prettierrc --write 'src/**/*.{js,jsx,ts,tsx}'"
   },
   "bugs": {
-    "url": "https://github.com/HduSy/oh-my-utils/issues"
+    "url": "https://github.com/HduSy/oh-my-funcs/issues"
   },
-  "homepage": "https://github.com/HduSy/oh-my-utils",
+  "homepage": "https://github.com/HduSy/oh-my-funcs",
   "keywords": [
     "utils",
     "function",
