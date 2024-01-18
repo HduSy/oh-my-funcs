@@ -9,23 +9,33 @@ smoothscroll.polyfill()
  * @param type 平台 h5|pc
  * @param justify 修正量
  */
-export default function scroll2target(type: 'h5'|'pc', targetId: string, justify = 0) {
+export default function scroll2target(
+  type: 'h5' | 'pc',
+  targetId: string,
+  justify = 0
+): void {
   const el = document.getElementById(targetId)
-  if (!el) return toast('滚动元素不存在')
-  if (type==='h5') {
-    const scrollTop = document.documentElement.scrollTop || document.body.scrollTop || window.pageYOffset
+  if (!el) {
+    toast('滚动元素不存在')
+    return
+  }
+  if (type === 'h5') {
+    const scrollTop =
+      document.documentElement.scrollTop ??
+      document.body.scrollTop ??
+      window.pageYOffset
     const y = el.getBoundingClientRect().top + scrollTop
     window.scrollTo({
       left: 0,
       top: y + justify,
-      behavior: 'smooth',
+      behavior: 'smooth'
     })
   } else {
     const scroll = new SmoothScroll('a[href*="#"]', {
       speed: 1000,
       offset: justify,
       updateURL: false, // Update the URL on scroll
-      popstate: false,
+      popstate: false
     })
     scroll.animateScroll(el)
   }

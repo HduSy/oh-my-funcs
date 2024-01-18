@@ -1,26 +1,21 @@
-/**
- * custom localStorage
- */
-import { compressToBase64, decompressFromBase64 } from 'lz-string'
-
-export function getLSData(storeKey: string) {
-  const dataStr = decompressFromBase64(localStorage.getItem(storeKey) || '') || '{}'
+export function getLSData(storeKey: string): Record<string, unknown> {
+  const dataStr = localStorage.getItem(storeKey) ?? '{}'
   try {
-      return JSON.parse(dataStr)
+    return JSON.parse(dataStr)
   } catch (e) {
-      return {}
+    return {}
   }
 }
 
-export function updateLSD(storeKey: string, key: string, value: any) {
+export function updateLSD(storeKey: string, key: string, value: unknown): void {
   const preData = getLSData(storeKey)
   const data = {
-      ...preData,
-      [key]: value,
+    ...preData,
+    [key]: value
   }
   try {
-      localStorage.setItem(storeKey, compressToBase64(JSON.stringify(data)))
+    localStorage.setItem(storeKey, JSON.stringify(data))
   } catch (e) {
-      console.log(e)
+    console.error(e)
   }
 }

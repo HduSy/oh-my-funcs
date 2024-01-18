@@ -1,9 +1,9 @@
-export default function toast(text: string, time = 1000) {
+export default function toast(text: string, time = 1000): void {
   if (!text || typeof text !== 'string') return
   const toast = document.createElement('div')
   const body = document.body
   toast.innerHTML = text
-  const styles: Partial<CSSStyleDeclaration> = {
+  const styles = {
     padding: '7px 12px',
     borderRadius: '8px',
     backgroundColor: '#000000',
@@ -18,10 +18,8 @@ export default function toast(text: string, time = 1000) {
     zIndex: '1000'
   }
   Object.keys(styles).forEach((key: string) => {
-    if (styles.hasOwnProperty(key)) {
-      // @ts-ignore
-      toast.style[key] = styles[key]
-    }
+    // @ts-expect-error
+    toast.style.setProperty(key, styles[key])
   })
   body.appendChild(toast)
   const timer = setTimeout(() => {

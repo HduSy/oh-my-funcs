@@ -1,8 +1,8 @@
-type TCallbackFn = () => void;
+type TCallbackFn = () => void
 const callbackList: TCallbackFn[] = []
 let lastVisibilityState: string
 
-function pageResumeHandler() {
+function pageResumeHandler(): void {
   const vState = document.visibilityState
   if (lastVisibilityState === 'hidden' && vState === 'visible') {
     for (let i = 0; i < callbackList.length; i++) {
@@ -16,7 +16,7 @@ function pageResumeHandler() {
  * 在页面离开又回来的时候触发事件
  * @param callback
  */
-export default function onPageResume(callback: TCallbackFn) {
+export default function onPageResume(callback: TCallbackFn): void {
   if (callbackList.length === 0) {
     document.removeEventListener('visibilitychange', pageResumeHandler, false)
     document.addEventListener('visibilitychange', pageResumeHandler, false)

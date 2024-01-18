@@ -1,7 +1,7 @@
-export default function wait(time = 1000) {
-  return new Promise(resolve => {
+export default async function wait(time = 1000): Promise<boolean> {
+  return await new Promise((resolve) => {
     setTimeout(() => {
-        resolve(true)
+      resolve(true)
     }, time)
   })
 }

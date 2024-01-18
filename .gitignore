@@ -1,5 +1,7 @@
-node_modules
 .history
+.husky
+.vscode
+lib
+node_modules
 .rollup.cache
 .DS_Store
-lib
