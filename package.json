@@ -1,5 +1,5 @@
 {
-  "name": "oh-my-utils",
+  "name": "@moss/oh-my-utils",
   "version": "1.0.1",
   "description": "前端开发常用功能函数，拿来即用",
   "type": "module",
